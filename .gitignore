@@ -1,0 +1,12 @@
+# Ambiente Virtual do Python
+mlops-env/
+
+# Cache do Python
+__pycache__/
+*.pyc
+
+# Arquivos de segredos (MUITO IMPORTANTE)
+.env
+
+# Pasta de configuração do VSCode (opcional, mas recomendado)
+.vscode/
