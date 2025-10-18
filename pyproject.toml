@@ -1,2 +1,15 @@
 [tool.black]
 line-length = 120
+
+[tool.pytest.ini_options]
+# Adiciona a configuração para o pytest-asyncio
+asyncio_default_fixture_loop_scope = "function"
+
+# Adiciona a lista de filtros de warnings
+filterwarnings = [
+    # Filtro para o Pydantic (AGORA COM O CAMINHO COMPLETO DA CLASSE)
+    'ignore:Support for class-based \`config\` is deprecated.*:pydantic.warnings.PydanticDeprecatedSince20',
+
+    # Filtro para o Keras
+    'ignore:Argument \`input_shape\` is deprecated:UserWarning'
+]

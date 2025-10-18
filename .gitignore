@@ -10,3 +10,7 @@ __pycache__/
 
 # Pasta de configuração do VSCode (opcional, mas recomendado)
 .vscode/
+
+.pytest_cache/
+mlruns/
+
