@@ -1,0 +1,8 @@
+rm -rf mlops-env
+python -m venv mlops-env
+source mlops-env/Scripts/activate
+python.exe -m pip install --upgrade pip
+pip install --no-cache-dir -r requirements.txt
+
+
+

@@ -38,7 +38,10 @@ def reset_seeds() -> None:
 
 
 def read_data():
-    data = pd.read_csv('https://raw.githubusercontent.com/renansantosmendes/lectures-cdas-2023/master/fetal_health_reduced.csv')
+    domain = 'raw.githubusercontent.com'
+    folder = '/renansantosmendes/lectures-cdas-2023/master/'
+    file_name = 'fetal_health_reduced.csv'
+    data = pd.read_csv(f'https://{domain}{folder}{file_name}')
     data = data.sample(frac=1, random_state=42).reset_index(drop=True)
     X = data.drop(["fetal_health"], axis=1)
     y = data["fetal_health"]
@@ -86,7 +89,7 @@ def config_mlflow():
 
 
 def train_model(model, X_train, y_train, is_train=True):
-    with mlflow.start_run(run_name='experiment_mlops_ead_slompo') as run:
+    with mlflow.start_run(run_name='experiment_mlops_ead_slompo') as _:
         model.fit(X_train,
                   y_train,
                   epochs=50,
